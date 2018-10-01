@@ -12,6 +12,9 @@ import SVProgressHUD
 
 class UserTableViewController: UITableViewController {
     
+    let userUid = String(Auth.auth().currentUser!.uid)
+    var friendsArray : [User] = [User]()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = true
@@ -19,23 +22,47 @@ class UserTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        retrieveFriends()
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return friendsArray.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath)
+        let item = friendsArray[indexPath.row]
+        
+        cell.textLabel?.text = item.name
+        
+        return cell
+    }
+    
+    
+    func retrieveFriends() {
+        let messageDB = Database.database().reference().child("Friendship").child(userUid)
+        self.friendsArray = []
+        messageDB.observe(.childAdded) { (snapshot) in
+            let friendUid = snapshot.value as! String
+            self.getUser(uid: friendUid)
+        }
+    }
+    
+    func getUser(uid: String) {
+        let messageDB = Database.database().reference().child("User").child(uid)
+        messageDB.observe(.value) { (snapshot) in
+            let snapshotValue = snapshot.value as! Dictionary<String,String>
+            let user = User()
+            user.name = snapshotValue["name"]!
+            user.email = snapshotValue["email"]!
+            user.uid = snapshotValue["uid"]!
+            self.friendsArray.append(user)
+            self.tableView.reloadData()
+        }
     }
 
     
@@ -49,13 +76,12 @@ class UserTableViewController: UITableViewController {
             
             findFriendDB.observe(.value, with: { (snapshot) -> Void in
                 if snapshot.exists() {
-                    let userUid = String(Auth.auth().currentUser!.uid)
                     let friendUid = snapshot.value as! String
-                    let uidArray = [userUid, friendUid]
+                    let uidArray = [self.userUid, friendUid]
                     for (index, uid) in uidArray.enumerated() {
                         let boolIndex = Bool(truncating: index as NSNumber) ? 0 : 1
                         let uidToSet = uidArray[boolIndex]
-                        let userDB = Database.database().reference().child("User").child(uid).child("friends").child(uidToSet)
+                        let userDB = Database.database().reference().child("Friendship").child(uid).child(uidToSet)
                         userDB.setValue(uidToSet) {
                             (error, reference) in
                             if error != nil {
@@ -71,7 +97,6 @@ class UserTableViewController: UITableViewController {
                     print("user doesn't exist")
                 }
             })
-            
         }
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "email"
