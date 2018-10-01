@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E0FB15AEBD00529997FCA8C5 /* Pods_Fire_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FA3730367697BC81686440F /* Pods_Fire_Messenger.framework */; };
-		E7C482D521627B9600A32F5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482D421627B9600A32F5A /* AppDelegate.swift */; };
-		E7C482D721627B9600A32F5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482D621627B9600A32F5A /* ViewController.swift */; };
 		E7C482DC21627B9600A32F5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C482DB21627B9600A32F5A /* Assets.xcassets */; };
 		E7C482DF21627B9600A32F5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C482DD21627B9600A32F5A /* LaunchScreen.storyboard */; };
 		E7C482EB2162814300A32F5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7C482EA2162814300A32F5A /* GoogleService-Info.plist */; };
-		E7C482ED216281EF00A32F5A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482EC216281EF00A32F5A /* RegisterViewController.swift */; };
 		E7C482EF2162824E00A32F5A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C482EE2162824E00A32F5A /* Default-568h@2x.png */; };
 		E7C482F1216282DD00A32F5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C482F0216282DD00A32F5A /* Main.storyboard */; };
+		E7C482F821628A6400A32F5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482F721628A6400A32F5A /* AppDelegate.swift */; };
+		E7C482FA21628A8200A32F5A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482F921628A8100A32F5A /* RegisterViewController.swift */; };
+		E7C482FC216292AD00A32F5A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482FB216292AD00A32F5A /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,15 +23,15 @@
 		AEE1C35CD8CD09A5B5EB16A6 /* Pods-Fire Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fire Messenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fire Messenger/Pods-Fire Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		CB349080B2B4DF9D3A1217BF /* Pods-Fire Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fire Messenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fire Messenger/Pods-Fire Messenger.release.xcconfig"; sourceTree = "<group>"; };
 		E7C482D121627B9600A32F5A /* Fire Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fire Messenger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7C482D421627B9600A32F5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7C482D621627B9600A32F5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7C482DB21627B9600A32F5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7C482DE21627B9600A32F5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7C482E021627B9600A32F5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7C482EA2162814300A32F5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E7C482EC216281EF00A32F5A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E7C482EE2162824E00A32F5A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E7C482F0216282DD00A32F5A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E7C482F721628A6400A32F5A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Fire Messenger/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		E7C482F921628A8100A32F5A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = "Fire Messenger/RegisterViewController.swift"; sourceTree = SOURCE_ROOT; };
+		E7C482FB216292AD00A32F5A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Fire Messenger/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +122,9 @@
 		E7C482F62162847600A32F5A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E7C482D421627B9600A32F5A /* AppDelegate.swift */,
-				E7C482D621627B9600A32F5A /* ViewController.swift */,
-				E7C482EC216281EF00A32F5A /* RegisterViewController.swift */,
+				E7C482F721628A6400A32F5A /* AppDelegate.swift */,
+				E7C482F921628A8100A32F5A /* RegisterViewController.swift */,
+				E7C482FB216292AD00A32F5A /* LoginViewController.swift */,
 			);
 			name = Controller;
 			path = "New Group";
@@ -262,9 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7C482ED216281EF00A32F5A /* RegisterViewController.swift in Sources */,
-				E7C482D721627B9600A32F5A /* ViewController.swift in Sources */,
-				E7C482D521627B9600A32F5A /* AppDelegate.swift in Sources */,
+				E7C482FA21628A8200A32F5A /* RegisterViewController.swift in Sources */,
+				E7C482FC216292AD00A32F5A /* LoginViewController.swift in Sources */,
+				E7C482F821628A6400A32F5A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -65,7 +65,7 @@
         <!--Login-->
         <scene sceneID="Lkz-aX-Job">
             <objects>
-                <viewController title="Login" id="Vuu-JL-w9e" sceneMemberID="viewController">
+                <viewController title="Login" id="Vuu-JL-w9e" customClass="LoginViewController" customModule="Fire_Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AeS-Qp-kGx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,6 +74,9 @@
                                 <rect key="frame" x="147" y="446" width="81" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginPressed:" destination="Vuu-JL-w9e" eventType="touchUpInside" id="yYQ-KE-fRt"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1cL-fU-zvz">
                                 <rect key="frame" x="34" y="123" width="307" height="30"/>
@@ -95,6 +98,8 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="emailTextField" destination="1cL-fU-zvz" id="qpI-Xw-yYH"/>
+                        <outlet property="passwordTextField" destination="OGM-2Q-iLj" id="Il5-vh-EKu"/>
                         <segue destination="4R2-QQ-d7b" kind="show" identifier="goToUserList" id="FMl-p1-x6p"/>
                     </connections>
                 </viewController>
@@ -105,7 +110,7 @@
         <!--Register-->
         <scene sceneID="GcH-sp-ebx">
             <objects>
-                <viewController title="Register" id="lpI-xt-lec" sceneMemberID="viewController">
+                <viewController title="Register" id="lpI-xt-lec" customClass="RegisterViewController" customModule="Fire_Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3kq-8h-sYZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,6 +119,9 @@
                                 <rect key="frame" x="130" y="496" width="114" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="registerPressed:" destination="lpI-xt-lec" eventType="touchUpInside" id="HQx-3o-4eV"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2iH-ah-q71">
                                 <rect key="frame" x="34" y="108" width="307" height="30"/>
@@ -123,7 +131,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bLr-Ey-MPY">
-                                <rect key="frame" x="34" y="190" width="307" height="30"/>
+                                <rect key="frame" x="34" y="252" width="307" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-rh-ucE">
+                                <rect key="frame" x="34" y="179" width="307" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -135,6 +150,9 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="emailTextField" destination="2iH-ah-q71" id="V3F-db-r0U"/>
+                        <outlet property="nameTextField" destination="F0E-rh-ucE" id="5ar-FT-K36"/>
+                        <outlet property="passwordTextField" destination="bLr-Ey-MPY" id="djQ-RV-v0u"/>
                         <segue destination="4R2-QQ-d7b" kind="show" identifier="goToUserList" id="KGb-lz-A5E"/>
                     </connections>
                 </viewController>
