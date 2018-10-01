@@ -160,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="840.79999999999995" y="-309.89505247376314"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Messages-->
         <scene sceneID="kXY-jY-68Q">
             <objects>
-                <tableViewController id="4R2-QQ-d7b" sceneMemberID="viewController">
+                <tableViewController id="4R2-QQ-d7b" customClass="UserTableViewController" customModule="Fire_Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6AH-g7-f4T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,6 +183,23 @@
                             <outlet property="delegate" destination="4R2-QQ-d7b" id="rgN-hD-krC"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Messages" id="K64-ZF-Pjr">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Hxr-bX-kUq">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="19j-F2-ktM">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LogOut"/>
+                                <connections>
+                                    <action selector="logOutPressed:" destination="4R2-QQ-d7b" eventType="touchUpInside" id="UvD-zb-7fk"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="AQs-mj-J7c">
+                            <connections>
+                                <action selector="addPressed:" destination="4R2-QQ-d7b" id="jnQ-pj-Flz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IY-hW-qJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

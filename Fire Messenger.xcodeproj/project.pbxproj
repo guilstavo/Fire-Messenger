@@ -16,6 +16,8 @@
 		E7C482F821628A6400A32F5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482F721628A6400A32F5A /* AppDelegate.swift */; };
 		E7C482FA21628A8200A32F5A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482F921628A8100A32F5A /* RegisterViewController.swift */; };
 		E7C482FC216292AD00A32F5A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482FB216292AD00A32F5A /* LoginViewController.swift */; };
+		E7C482FE216295DB00A32F5A /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482FD216295DB00A32F5A /* UserTableViewController.swift */; };
+		E7C4830021629C9800A32F5A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482FF21629C9800A32F5A /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E7C482F721628A6400A32F5A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Fire Messenger/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		E7C482F921628A8100A32F5A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = "Fire Messenger/RegisterViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E7C482FB216292AD00A32F5A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Fire Messenger/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
+		E7C482FD216295DB00A32F5A /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserTableViewController.swift; path = "Fire Messenger/UserTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		E7C482FF21629C9800A32F5A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 		E7C482F42162845E00A32F5A /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				E7C482FF21629C9800A32F5A /* User.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 				E7C482F721628A6400A32F5A /* AppDelegate.swift */,
 				E7C482F921628A8100A32F5A /* RegisterViewController.swift */,
 				E7C482FB216292AD00A32F5A /* LoginViewController.swift */,
+				E7C482FD216295DB00A32F5A /* UserTableViewController.swift */,
 			);
 			name = Controller;
 			path = "New Group";
@@ -264,6 +270,8 @@
 			files = (
 				E7C482FA21628A8200A32F5A /* RegisterViewController.swift in Sources */,
 				E7C482FC216292AD00A32F5A /* LoginViewController.swift in Sources */,
+				E7C482FE216295DB00A32F5A /* UserTableViewController.swift in Sources */,
+				E7C4830021629C9800A32F5A /* User.swift in Sources */,
 				E7C482F821628A6400A32F5A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
