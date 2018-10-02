@@ -42,17 +42,29 @@ class UserTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToChat", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! ChatViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedFriend = friendsArray[indexPath.row]
+        }
+    }
+    
     
     func retrieveFriends() {
         let messageDB = Database.database().reference().child("Friendship").child(userUid)
         self.friendsArray = []
         messageDB.observe(.childAdded) { (snapshot) in
-            let friendUid = snapshot.value as! String
-            self.getUser(uid: friendUid)
+            let friendUid = snapshot.key
+            let chatId = snapshot.value as! String
+            self.getUser(uid: friendUid, chatId: chatId)
         }
     }
     
-    func getUser(uid: String) {
+    func getUser(uid: String, chatId: String) {
         let messageDB = Database.database().reference().child("User").child(uid)
         messageDB.observe(.value) { (snapshot) in
             let snapshotValue = snapshot.value as! Dictionary<String,String>
@@ -60,6 +72,7 @@ class UserTableViewController: UITableViewController {
             user.name = snapshotValue["name"]!
             user.email = snapshotValue["email"]!
             user.uid = snapshotValue["uid"]!
+            user.chatId = chatId
             self.friendsArray.append(user)
             self.tableView.reloadData()
         }
@@ -78,11 +91,13 @@ class UserTableViewController: UITableViewController {
                 if snapshot.exists() {
                     let friendUid = snapshot.value as! String
                     let uidArray = [self.userUid, friendUid]
+                    let messageKey = Database.database().reference().child("Message").childByAutoId().key
                     for (index, uid) in uidArray.enumerated() {
                         let boolIndex = Bool(truncating: index as NSNumber) ? 0 : 1
                         let uidToSet = uidArray[boolIndex]
                         let userDB = Database.database().reference().child("Friendship").child(uid).child(uidToSet)
-                        userDB.setValue(uidToSet) {
+                        
+                        userDB.setValue(messageKey) {
                             (error, reference) in
                             if error != nil {
                                 print(error!)

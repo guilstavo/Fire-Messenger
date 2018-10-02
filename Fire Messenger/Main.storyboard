@@ -160,7 +160,7 @@
             </objects>
             <point key="canvasLocation" x="840.79999999999995" y="-309.89505247376314"/>
         </scene>
-        <!--Messages-->
+        <!--Friends-->
         <scene sceneID="kXY-jY-68Q">
             <objects>
                 <tableViewController id="4R2-QQ-d7b" customClass="UserTableViewController" customModule="Fire_Messenger" customModuleProvider="target" sceneMemberID="viewController">
@@ -183,7 +183,7 @@
                             <outlet property="delegate" destination="4R2-QQ-d7b" id="rgN-hD-krC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Messages" id="K64-ZF-Pjr">
+                    <navigationItem key="navigationItem" title="Friends" id="K64-ZF-Pjr">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="Hxr-bX-kUq">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="19j-F2-ktM">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
@@ -200,13 +200,96 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="oHc-8i-dol" kind="show" identifier="goToChat" id="ePa-JM-led"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IY-hW-qJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1841" y="102"/>
         </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="fP7-dM-tMK">
+            <objects>
+                <viewController id="oHc-8i-dol" customClass="ChatViewController" customModule="Fire_Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AQc-Hc-WhL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZv-jO-TLc">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M0r-yI-Huw">
+                                        <rect key="frame" x="8" y="10" width="305" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sr8-EE-Igp">
+                                        <rect key="frame" x="321" y="10" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="DtO-9Y-FcL"/>
+                                            <constraint firstAttribute="width" constant="46" id="rIW-q0-rtb"/>
+                                        </constraints>
+                                        <state key="normal" title="Send">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendPressed:" destination="oHc-8i-dol" eventType="touchUpInside" id="y9P-jt-qKR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="M0r-yI-Huw" firstAttribute="leading" secondItem="fZv-jO-TLc" secondAttribute="leading" constant="8" id="46U-4S-Rtx"/>
+                                    <constraint firstItem="sr8-EE-Igp" firstAttribute="top" secondItem="fZv-jO-TLc" secondAttribute="top" constant="10" id="7Yq-sb-pZb"/>
+                                    <constraint firstAttribute="trailing" secondItem="sr8-EE-Igp" secondAttribute="trailing" constant="8" id="9ff-Os-hSn"/>
+                                    <constraint firstItem="sr8-EE-Igp" firstAttribute="leading" secondItem="M0r-yI-Huw" secondAttribute="trailing" constant="8" id="GuG-33-6v5"/>
+                                    <constraint firstAttribute="height" constant="50" id="Q5N-HI-4RZ"/>
+                                    <constraint firstItem="sr8-EE-Igp" firstAttribute="leading" secondItem="M0r-yI-Huw" secondAttribute="trailing" constant="8" id="o7U-di-sH2"/>
+                                    <constraint firstItem="M0r-yI-Huw" firstAttribute="top" secondItem="fZv-jO-TLc" secondAttribute="top" constant="10" id="ohD-6D-iaQ"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3cc-La-q9g">
+                                <rect key="frame" x="0.0" y="64" width="375" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" id="fW5-Na-GJ4">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MessageCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fW5-Na-GJ4" id="e6a-7i-x8I">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fZv-jO-TLc" firstAttribute="top" secondItem="3cc-La-q9g" secondAttribute="bottom" id="8L9-Gr-o8c"/>
+                            <constraint firstItem="sne-iP-dHs" firstAttribute="trailing" secondItem="fZv-jO-TLc" secondAttribute="trailing" id="Dhu-dG-e8T"/>
+                            <constraint firstItem="3cc-La-q9g" firstAttribute="leading" secondItem="sne-iP-dHs" secondAttribute="leading" id="Fkv-il-UKG"/>
+                            <constraint firstItem="fZv-jO-TLc" firstAttribute="bottom" secondItem="sne-iP-dHs" secondAttribute="bottom" id="OT9-Rc-c6J"/>
+                            <constraint firstItem="fZv-jO-TLc" firstAttribute="leading" secondItem="sne-iP-dHs" secondAttribute="leading" id="WSU-f0-3Kk"/>
+                            <constraint firstItem="3cc-La-q9g" firstAttribute="top" secondItem="sne-iP-dHs" secondAttribute="top" id="flN-z9-LLQ"/>
+                            <constraint firstItem="3cc-La-q9g" firstAttribute="trailing" secondItem="sne-iP-dHs" secondAttribute="trailing" id="hHz-xc-jSE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sne-iP-dHs"/>
+                    </view>
+                    <connections>
+                        <outlet property="heightConstraint" destination="Q5N-HI-4RZ" id="wev-mM-CA4"/>
+                        <outlet property="messageTableView" destination="3cc-La-q9g" id="5b4-4Y-C3T"/>
+                        <outlet property="messageTextField" destination="M0r-yI-Huw" id="rcs-Ft-MB0"/>
+                        <outlet property="sendButton" destination="sr8-EE-Igp" id="kue-eA-gZD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zq2-zY-pvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2709.5999999999999" y="100.29985007496252"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FMl-p1-x6p"/>
+        <segue reference="KGb-lz-A5E"/>
     </inferredMetricsTieBreakers>
 </document>

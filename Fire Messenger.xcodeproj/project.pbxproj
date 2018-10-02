@@ -18,6 +18,10 @@
 		E7C482FC216292AD00A32F5A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482FB216292AD00A32F5A /* LoginViewController.swift */; };
 		E7C482FE216295DB00A32F5A /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482FD216295DB00A32F5A /* UserTableViewController.swift */; };
 		E7C4830021629C9800A32F5A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482FF21629C9800A32F5A /* User.swift */; };
+		E7C483032162C37500A32F5A /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C483012162C37500A32F5A /* CustomMessageCell.swift */; };
+		E7C483042162C37500A32F5A /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C483022162C37500A32F5A /* MessageCell.xib */; };
+		E7C4830B2162C7DC00A32F5A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4830A2162C7DC00A32F5A /* ChatViewController.swift */; };
+		E7C4830D2162CD9500A32F5A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4830C2162CD9500A32F5A /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		E7C482FB216292AD00A32F5A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Fire Messenger/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E7C482FD216295DB00A32F5A /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserTableViewController.swift; path = "Fire Messenger/UserTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E7C482FF21629C9800A32F5A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E7C483012162C37500A32F5A /* CustomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
+		E7C483022162C37500A32F5A /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		E7C4830A2162C7DC00A32F5A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = "Fire Messenger/ChatViewController.swift"; sourceTree = SOURCE_ROOT; };
+		E7C4830C2162CD9500A32F5A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				E7C482FF21629C9800A32F5A /* User.swift */,
+				E7C4830C2162CD9500A32F5A /* Message.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -120,6 +129,7 @@
 			children = (
 				E7C482DD21627B9600A32F5A /* LaunchScreen.storyboard */,
 				E7C482F0216282DD00A32F5A /* Main.storyboard */,
+				E7C483052162C38800A32F5A /* Custom Cell */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -131,9 +141,19 @@
 				E7C482F921628A8100A32F5A /* RegisterViewController.swift */,
 				E7C482FB216292AD00A32F5A /* LoginViewController.swift */,
 				E7C482FD216295DB00A32F5A /* UserTableViewController.swift */,
+				E7C4830A2162C7DC00A32F5A /* ChatViewController.swift */,
 			);
 			name = Controller;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		E7C483052162C38800A32F5A /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E7C483012162C37500A32F5A /* CustomMessageCell.swift */,
+				E7C483022162C37500A32F5A /* MessageCell.xib */,
+			);
+			name = "Custom Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +218,7 @@
 			files = (
 				E7C482DF21627B9600A32F5A /* LaunchScreen.storyboard in Resources */,
 				E7C482F1216282DD00A32F5A /* Main.storyboard in Resources */,
+				E7C483042162C37500A32F5A /* MessageCell.xib in Resources */,
 				E7C482EB2162814300A32F5A /* GoogleService-Info.plist in Resources */,
 				E7C482DC21627B9600A32F5A /* Assets.xcassets in Resources */,
 				E7C482EF2162824E00A32F5A /* Default-568h@2x.png in Resources */,
@@ -268,10 +289,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C483032162C37500A32F5A /* CustomMessageCell.swift in Sources */,
+				E7C4830B2162C7DC00A32F5A /* ChatViewController.swift in Sources */,
 				E7C482FA21628A8200A32F5A /* RegisterViewController.swift in Sources */,
 				E7C482FC216292AD00A32F5A /* LoginViewController.swift in Sources */,
 				E7C482FE216295DB00A32F5A /* UserTableViewController.swift in Sources */,
 				E7C4830021629C9800A32F5A /* User.swift in Sources */,
+				E7C4830D2162CD9500A32F5A /* Message.swift in Sources */,
 				E7C482F821628A6400A32F5A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
