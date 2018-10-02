@@ -19,6 +19,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     let currentUser = Auth.auth().currentUser?.email
+    var duration : NSNumber = 0
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var sendButton: UIButton!
@@ -38,7 +39,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         messageTableView.addGestureRecognizer(tapGesture)
         
-//        messageTableView.separatorStyle = .none
+        messageTableView.separatorStyle = .none
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
 
     // MARK: - Table view data source
@@ -56,7 +62,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.messageBody.text = messageArray[indexPath.row].messageBody
         cell.MessageTime.text = "00:00"
         cell.contentView.superview?.clipsToBounds = true
-//        cell.messageBackground.backgroundColor = UIColor.flatSkyBlue()
+        
+        if messageArray[indexPath.row].sender == Auth.auth().currentUser?.email! {
+            cell.messageBackground.backgroundColor = UIColor.flatSkyBlue()
+        } else {
+            cell.messageBackground.backgroundColor = UIColor.flatGray()
+        }
         
         return cell
     }
@@ -65,20 +76,27 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTextField.endEditing(true)
     }
     
+    @objc func keyboardWillShow(notification: NSNotification) {
+        duration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber)
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight : Int = Int(keyboardSize.height)
+            print("keyboardHeight",keyboardHeight)
+            
+            UIView.animate(withDuration: TimeInterval(truncating: duration)) {
+                self.heightConstraint.constant = CGFloat(keyboardHeight + 50)
+                self.view.layoutIfNeeded()
+            }
+            
+        }
+    }
+    
     func configureTableView() {
         messageTableView.rowHeight = UITableView.automaticDimension
         messageTableView.estimatedRowHeight = 120.0
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.5) {
-            self.heightConstraint.constant = 308
-            self.view.layoutIfNeeded()
-        }
-    }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: TimeInterval(truncating: duration)) {
             self.heightConstraint.constant = 50
             self.view.layoutIfNeeded()
         }
@@ -96,6 +114,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             message.messageBody = snapshotValue["messageBody"]!
             message.sender = snapshotValue["sender"]!
 //            message.timestamp = String(snapshotValue["timestamp"]!)
+            
 
             self.messageArray.append(message)
             self.configureTableView()
@@ -103,6 +122,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
     }
+
 
     @IBAction func sendPressed(_ sender: Any) {
         if messageTextField.text != "" {

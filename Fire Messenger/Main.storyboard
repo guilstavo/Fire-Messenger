@@ -126,7 +126,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="o8L-b8-vLS">
                                 <rect key="frame" x="20" y="94" width="335" height="160"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a@a.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1cL-fU-zvz" customClass="inputTextField" customModule="Fire_Messenger" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1cL-fU-zvz" customClass="inputTextField" customModule="Fire_Messenger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="0PC-sS-AFO"/>
@@ -135,7 +135,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-2Q-iLj" customClass="inputTextField" customModule="Fire_Messenger" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OGM-2Q-iLj" customClass="inputTextField" customModule="Fire_Messenger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55" width="335" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="A3g-yz-XKv"/>
@@ -277,6 +277,7 @@
                     <navigationItem key="navigationItem" id="ZeL-j2-wUT"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="appBackground" destination="eS6-Bw-38e" id="mKK-Og-iVf"/>
                         <outlet property="emailTextField" destination="2iH-ah-q71" id="V3F-db-r0U"/>
                         <outlet property="nameTextField" destination="F0E-rh-ucE" id="5ar-FT-K36"/>
                         <outlet property="passwordTextField" destination="bLr-Ey-MPY" id="djQ-RV-v0u"/>

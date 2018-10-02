@@ -22,6 +22,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         registerButton.layer.cornerRadius = 25
     }
+    
 
     @IBAction func registerPressed(_ sender: Any) {
         if emailTextField.text != "" && passwordTextField.text != "" && nameTextField.text != "" {
