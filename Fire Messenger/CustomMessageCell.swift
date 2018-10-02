@@ -21,4 +21,8 @@ class CustomMessageCell: UITableViewCell {
         // Initialization code
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+    
 }

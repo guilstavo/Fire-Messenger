@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E0FB15AEBD00529997FCA8C5 /* Pods_Fire_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FA3730367697BC81686440F /* Pods_Fire_Messenger.framework */; };
+		E710DE822163EDCA00826F80 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E710DE812163EDCA00826F80 /* WelcomeViewController.swift */; };
+		E710DE842163F5E700826F80 /* inputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E710DE832163F5E700826F80 /* inputTextField.swift */; };
 		E7C482DC21627B9600A32F5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C482DB21627B9600A32F5A /* Assets.xcassets */; };
 		E7C482DF21627B9600A32F5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C482DD21627B9600A32F5A /* LaunchScreen.storyboard */; };
 		E7C482EB2162814300A32F5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7C482EA2162814300A32F5A /* GoogleService-Info.plist */; };
@@ -19,7 +21,7 @@
 		E7C482FE216295DB00A32F5A /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482FD216295DB00A32F5A /* UserTableViewController.swift */; };
 		E7C4830021629C9800A32F5A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C482FF21629C9800A32F5A /* User.swift */; };
 		E7C483032162C37500A32F5A /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C483012162C37500A32F5A /* CustomMessageCell.swift */; };
-		E7C483042162C37500A32F5A /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C483022162C37500A32F5A /* MessageCell.xib */; };
+		E7C483042162C37500A32F5A /* CustomMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C483022162C37500A32F5A /* CustomMessageCell.xib */; };
 		E7C4830B2162C7DC00A32F5A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4830A2162C7DC00A32F5A /* ChatViewController.swift */; };
 		E7C4830D2162CD9500A32F5A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4830C2162CD9500A32F5A /* Message.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +30,8 @@
 		2FA3730367697BC81686440F /* Pods_Fire_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fire_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE1C35CD8CD09A5B5EB16A6 /* Pods-Fire Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fire Messenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fire Messenger/Pods-Fire Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		CB349080B2B4DF9D3A1217BF /* Pods-Fire Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fire Messenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fire Messenger/Pods-Fire Messenger.release.xcconfig"; sourceTree = "<group>"; };
+		E710DE812163EDCA00826F80 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = "Fire Messenger/WelcomeViewController.swift"; sourceTree = SOURCE_ROOT; };
+		E710DE832163F5E700826F80 /* inputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputTextField.swift; sourceTree = "<group>"; };
 		E7C482D121627B9600A32F5A /* Fire Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fire Messenger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C482DB21627B9600A32F5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7C482DE21627B9600A32F5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,7 +45,7 @@
 		E7C482FD216295DB00A32F5A /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserTableViewController.swift; path = "Fire Messenger/UserTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E7C482FF21629C9800A32F5A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E7C483012162C37500A32F5A /* CustomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
-		E7C483022162C37500A32F5A /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		E7C483022162C37500A32F5A /* CustomMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMessageCell.xib; sourceTree = "<group>"; };
 		E7C4830A2162C7DC00A32F5A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = "Fire Messenger/ChatViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E7C4830C2162CD9500A32F5A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +133,7 @@
 			children = (
 				E7C482DD21627B9600A32F5A /* LaunchScreen.storyboard */,
 				E7C482F0216282DD00A32F5A /* Main.storyboard */,
+				E710DE832163F5E700826F80 /* inputTextField.swift */,
 				E7C483052162C38800A32F5A /* Custom Cell */,
 			);
 			name = View;
@@ -142,6 +147,7 @@
 				E7C482FB216292AD00A32F5A /* LoginViewController.swift */,
 				E7C482FD216295DB00A32F5A /* UserTableViewController.swift */,
 				E7C4830A2162C7DC00A32F5A /* ChatViewController.swift */,
+				E710DE812163EDCA00826F80 /* WelcomeViewController.swift */,
 			);
 			name = Controller;
 			path = "New Group";
@@ -151,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				E7C483012162C37500A32F5A /* CustomMessageCell.swift */,
-				E7C483022162C37500A32F5A /* MessageCell.xib */,
+				E7C483022162C37500A32F5A /* CustomMessageCell.xib */,
 			);
 			name = "Custom Cell";
 			sourceTree = "<group>";
@@ -218,7 +224,7 @@
 			files = (
 				E7C482DF21627B9600A32F5A /* LaunchScreen.storyboard in Resources */,
 				E7C482F1216282DD00A32F5A /* Main.storyboard in Resources */,
-				E7C483042162C37500A32F5A /* MessageCell.xib in Resources */,
+				E7C483042162C37500A32F5A /* CustomMessageCell.xib in Resources */,
 				E7C482EB2162814300A32F5A /* GoogleService-Info.plist in Resources */,
 				E7C482DC21627B9600A32F5A /* Assets.xcassets in Resources */,
 				E7C482EF2162824E00A32F5A /* Default-568h@2x.png in Resources */,
@@ -289,9 +295,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E710DE822163EDCA00826F80 /* WelcomeViewController.swift in Sources */,
 				E7C483032162C37500A32F5A /* CustomMessageCell.swift in Sources */,
 				E7C4830B2162C7DC00A32F5A /* ChatViewController.swift in Sources */,
 				E7C482FA21628A8200A32F5A /* RegisterViewController.swift in Sources */,
+				E710DE842163F5E700826F80 /* inputTextField.swift in Sources */,
 				E7C482FC216292AD00A32F5A /* LoginViewController.swift in Sources */,
 				E7C482FE216295DB00A32F5A /* UserTableViewController.swift in Sources */,
 				E7C4830021629C9800A32F5A /* User.swift in Sources */,
@@ -435,6 +443,7 @@
 			baseConfigurationReference = AEE1C35CD8CD09A5B5EB16A6 /* Pods-Fire Messenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F7K546FM32;
 				INFOPLIST_FILE = "Fire Messenger/Info.plist";
@@ -444,6 +453,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gustavo.Fire-Messenger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -454,6 +464,7 @@
 			baseConfigurationReference = CB349080B2B4DF9D3A1217BF /* Pods-Fire Messenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F7K546FM32;
 				INFOPLIST_FILE = "Fire Messenger/Info.plist";
@@ -463,6 +474,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gustavo.Fire-Messenger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

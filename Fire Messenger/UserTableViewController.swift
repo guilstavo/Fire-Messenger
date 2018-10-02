@@ -55,12 +55,14 @@ class UserTableViewController: UITableViewController {
     
     
     func retrieveFriends() {
+        SVProgressHUD.show()
         let messageDB = Database.database().reference().child("Friendship").child(userUid)
         self.friendsArray = []
         messageDB.observe(.childAdded) { (snapshot) in
             let friendUid = snapshot.key
             let chatId = snapshot.value as! String
             self.getUser(uid: friendUid, chatId: chatId)
+            SVProgressHUD.dismiss()
         }
     }
     

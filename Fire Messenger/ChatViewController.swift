@@ -15,7 +15,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     var messageArray : [Message] = [Message]()
     var selectedFriend : User? {
         didSet {
-            retrieveChat()
+//            retrieveChat()
         }
     }
     let currentUser = Auth.auth().currentUser?.email
@@ -24,6 +24,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var messageTableView: UITableView!
+    @IBOutlet weak var bottomChatContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +32,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTableView.dataSource = self
         messageTextField.delegate = self
         
+        messageTableView.register(UINib(nibName: "CustomMessageCell", bundle: nil), forCellReuseIdentifier: "CustomMessageCell")
+        retrieveChat()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         messageTableView.addGestureRecognizer(tapGesture)
         
-        //TODO: Register your MessageCell.xib file here:
-        messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
-        configureTableView()
-    
 //        messageTableView.separatorStyle = .none
     }
 
@@ -46,16 +45,18 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 120.0
         return messageArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomMessageCell", for: indexPath) as! CustomMessageCell
         
         cell.messageBody.text = messageArray[indexPath.row].messageBody
-        print(cell.messageBody.text)
-        cell.messageBackground.backgroundColor = UIColor.flatSkyBlue()
-
+        cell.MessageTime.text = "00:00"
+        cell.contentView.superview?.clipsToBounds = true
+//        cell.messageBackground.backgroundColor = UIColor.flatSkyBlue()
         
         return cell
     }
@@ -84,6 +85,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func retrieveChat() {
+        print("retrieveChat")
         self.title = selectedFriend!.name
         let messagesDB = Database.database().reference().child("Messages").child(selectedFriend!.chatId)
         
