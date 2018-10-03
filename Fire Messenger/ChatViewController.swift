@@ -141,6 +141,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         if messageTextField.text != "" {
             messageTextField.isEnabled = false
             sendButton.isEnabled = false
+            messageTextField.endEditing(false)
             
             let messageDictionary = [
                 "sender": currentUser as Any,
