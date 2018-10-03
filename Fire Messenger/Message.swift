@@ -9,5 +9,5 @@
 class Message {
     var sender : String = ""
     var messageBody : String = ""
-//    var timestamp : String = ""
+    var timestamp : String = ""
 }
